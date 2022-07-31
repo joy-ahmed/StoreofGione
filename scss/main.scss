@@ -1,0 +1,10 @@
+// theme customization
+$theme-colors: (
+  'primary': #ff0000,
+  'secondary': teal
+);
+//imported bootstrap from node module
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+
+// custom css code
