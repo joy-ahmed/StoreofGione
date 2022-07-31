@@ -1,10 +1,65 @@
+//google font links
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 // theme customization
-$theme-colors: (
-  'primary': #ff0000,
-  'secondary': teal
-);
+$font-family-sans-serif:'Poppins', sans-serif;
+
 //imported bootstrap from node module
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 
 // custom css code
+
+.li-bar{
+  width: 1px;
+  background-color: #55555563;
+  height: 1rem;
+  align-self: center;
+}
+
+.nav-icon{
+  font-size: 1.2rem;
+  color: darkgrey;
+}
+
+.custom-dropdown{
+  position: relative;
+  ul{
+    display: none;
+    min-width: 100px;
+    position: absolute;
+    z-index: 999;
+    background-color: #fff;
+    box-shadow: 0 1px 7px -2px rgb(0 0 0 /30%);
+    padding: 1rem;
+    margin-top: 0.5rem;
+  }
+  &:hover{
+    ul{
+      display: block;
+    }
+  }
+}
+
+.collectionNav{
+  position: relative;
+  .dropnav{
+    position: absolute;
+    min-width: 400px;
+    z-index: 999;
+    box-shadow: 0 1px 7px -2px rgb(0 0 0 /30%);
+    padding: 1rem;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+    margin-top: 0.5rem;
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  &:hover{
+    .dropnav{
+      visibility: visible;
+      opacity: 1;
+      transform: scaleY(1);
+    }
+  }
+}
