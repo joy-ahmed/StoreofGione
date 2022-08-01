@@ -44,22 +44,52 @@ $font-family-sans-serif:'Poppins', sans-serif;
   position: relative;
   .dropnav{
     position: absolute;
-    min-width: 400px;
-    z-index: 999;
+    min-width: 500px;
+    justify-content: space-between;
+    z-index: 999999;
+    background-color: #f6f6f6;
     box-shadow: 0 1px 7px -2px rgb(0 0 0 /30%);
-    padding: 1rem;
+    padding: 1rem 1rem 0 1rem;
     visibility: hidden;
-    opacity: 0;
     transition: 0.3s;
     margin-top: 0.5rem;
     transform: scaleY(0);
     transform-origin: top;
   }
+  .down{
+    transition: .5s;
+  }
   &:hover{
     .dropnav{
       visibility: visible;
-      opacity: 1;
       transform: scaleY(1);
     }
+    .down{
+      transform: rotate(180deg);
+    }
+  }
+}
+
+
+#main-carousel{
+  .carousel-inner{
+    height: 500px;
+  }
+  .carousel-control-prev{
+    left: -15rem;
+  } 
+  .carousel-control-next{
+    right: -15rem;
+  }
+  .carousel-control-prev,.carousel-control-next{
+    filter: invert(100%);
+  }
+  .carousel-item{
+    height: 100%;
+    background: #f6f6f6;
+  }
+  .inner-content{
+    align-items: center;
+    padding: 1rem;
   }
 }
