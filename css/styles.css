@@ -10833,7 +10833,62 @@ textarea.form-control-lg {
 }
 #main-carousel .inner-content {
   align-items: center;
+  justify-content: center;
   padding: 1rem;
+}
+#main-carousel .inner-content .content {
+  flex: 1;
+  animation: leftToRight 1.5s ease 0.4s;
+}
+#main-carousel .inner-content .content h2, #main-carousel .inner-content .content .h2 {
+  font-size: 4rem;
+  line-height: 4rem;
+}
+#main-carousel .inner-content .img-banner {
+  flex: 2;
+  animation: bottomtoUp 1.5s ease 0.4s;
+}
+#main-carousel .inner-content .cta {
+  padding: 1rem 3rem;
+  border: 1px solid #000;
+  outline: none;
+  position: relative;
+  background: transparent;
+}
+#main-carousel .inner-content .cta:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  color: invert(100%);
+  transform: translateX(-100%);
+  background: rgba(248, 109, 132, 0.781);
+  text-align: center;
+  transition: all 0.5s;
+}
+#main-carousel .inner-content .cta:hover:after {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+@keyframes bottomtoUp {
+  from {
+    transform: translateY(50%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes leftToRight {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
