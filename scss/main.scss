@@ -24,18 +24,22 @@ $font-family-sans-serif:'Poppins', sans-serif;
 .custom-dropdown{
   position: relative;
   ul{
-    display: none;
     min-width: 100px;
     position: absolute;
-    z-index: 999;
-    background-color: #fff;
+    z-index: 999999;
+    background-color: #f6f6f6;
     box-shadow: 0 1px 7px -2px rgb(0 0 0 /30%);
-    padding: 1rem;
+    padding: 1rem 1rem 0 1rem;
+    visibility: hidden;
+    transition: 0.3s;
     margin-top: 0.5rem;
+    transform: scaleY(0);
+    transform-origin: top;
   }
   &:hover{
     ul{
-      display: block;
+      visibility: visible;
+      transform: scaleY(1);
     }
   }
 }
@@ -70,6 +74,16 @@ $font-family-sans-serif:'Poppins', sans-serif;
   }
 }
 
+
+//somthin extra
+.carousel-item {
+  transition: transform 1s ease-in-out;
+}
+
+.carousel-fade .active.carousel-item-start,
+.carousel-fade .active.carousel-item-end {
+  transition: opacity 0s 1s;
+}
 
 #main-carousel{
   .carousel-inner{
@@ -110,23 +124,27 @@ $font-family-sans-serif:'Poppins', sans-serif;
       outline: none;
       position: relative;
       background: transparent;
-      &:after{
+      z-index: 1;
+      &:before{
         content: "";
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-        color: invert(100%);
-        transform: translateX(-100%);
-        background: rgba(248, 109, 132, 0.781);
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        border-radius: inherit;
+        transform: scaleX(0);
+        transform-origin: left;
+        background: #DC3545;
         text-align: center;
         transition: all .5s;
       }
-      &:hover:after{
-        transform: translateX(0);
-        opacity: 1;
+      &:hover:before{
+        transform: scaleX(1);
+      }
+      &:hover{
+        color: #fff;
       }
     }
   }
@@ -249,10 +267,9 @@ $font-family-sans-serif:'Poppins', sans-serif;
       height: 48px;
       background-color: #a749ff;
       transition: 0.5s ease;
-      transform: translateY(0px);
+      transform: translateY(20px);
       visibility: hidden;
       opacity: 0;
-
       button{
         font-size: 16px;
         line-height: 48px;
@@ -286,6 +303,13 @@ $font-family-sans-serif:'Poppins', sans-serif;
       // margin: 0;
       transition-delay: 0.2s;
       border-left: 1px solid hsl(0, 0%, 100%, 0.2);
+    }
+  }
+  &:hover{
+    .pro-same-action{
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0px);
     }
   }
 }
